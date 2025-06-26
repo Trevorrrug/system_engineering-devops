@@ -1,3 +1,2 @@
 #!/bin/bash
-for d in *; do [ -d "$d" ] && chmod 755 "$d"; done
-
+chmod 753 hello
