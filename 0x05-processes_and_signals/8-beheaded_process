@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script forcefully kills the 7-highlander process using SIGKILL
+
+if [[ -f /tmp/my_script_pid.txt ]]; then
+  PID=$(cat /tmp/my_script_pid.txt)
+  kill -9 "$PID"
+else
+  echo "No PID file found, is 7-highlander running?"
+fi
