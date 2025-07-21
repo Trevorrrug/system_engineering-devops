@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Script to kill the 4-to_infinity_and_beyond process without using pgrep
+
+# Find the PID(s) of the 4-to_infinity_and_beyond process using ps and grep
+pids=$(ps aux | grep './4-to_infinity_and_beyond' | grep -v grep | awk '{print $2}')
+
+# Kill the process(es) if found
+if [ -n "$pids" ]; then
+    kill $pids
+fi
