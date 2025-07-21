@@ -1,19 +1,9 @@
 #!/usr/bin/env bash
 # Script to kill the 4-to_infinity_and_beyond process
 
-# Get PIDs of the process
-pids=$(ps aux | grep './4-to_infinity_and_beyond' | grep -v grep | awk '{print $2}')
+# shellcheck disable=SC2009
+pid=$(ps aux | grep "./4-to_infinity_and_beyond" | grep -v grep | awk '{print $2}')
 
-# Kill all found PIDs
-if [ -n "$pids" ]; then
-    echo "$pids" | xargs kill
-fi#!/usr/bin/env bash
-# Script to kill the 4-to_infinity_and_beyond process
-
-# Get PIDs of the process
-pids=$(ps aux | grep './4-to_infinity_and_beyond' | grep -v grep | awk '{print $2}')
-
-# Kill all found PIDs
-if [ -n "$pids" ]; then
-    echo "$pids" | xargs kill
+if [ -n "$pid" ]; then
+  kill "$pid"
 fi
