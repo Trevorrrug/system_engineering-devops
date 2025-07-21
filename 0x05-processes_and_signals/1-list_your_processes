@@ -1,3 +1,2 @@
 #!/usr/bin/env bash
-# Display all running processes with full tree hierarchy, all users, and full details
 ps -eo user,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,command --forest
